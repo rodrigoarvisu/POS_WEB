@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #212020;
+    overflow-y: auto;
+    margin: 0;
+}
+
+.contenedor-reportes {
+    width: 95%;
+    margin: 20px auto;
+}
+
+.contenedor-reportes h3 {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 0px;
+    margin-top: 40px;
+}
+
+.filtros-reportes {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.btn-filtro {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    background: #2c2c39;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-filtro:hover {
+    background: #042f6f;
+}
+
+.btn-filtro.activo {
+    background: #042f6f;
+}
+
+.cards-reportes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.card-reporte {
+     background: linear-gradient(135deg, #282829, #5a5959a6);
+    padding: 18px;
+    border-radius: 16px;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    transition: 0.3s;
+}
+
+.info-reporte {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-reporte h3, 
+.card-reporte p {
+    margin: 4px;
+}
+
+.card-reporte h3 {
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.card-reporte p {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.grafica-reportes {
+    margin-top: 20px;
+    background: rgb(52, 52, 52);
+    border-radius: 16px;
+    min-height: 100px;
+    padding: 20px;
+    height: 280px;
+}
+
+.icono-ventas {
+    width: 100px;
+    height: 95px;
+    border-radius: 50%;
+    padding: 12px;
+}
+
+.icono-utilidades {
+    width: 100px;
+    height: 93px;
+    border-radius: 50%;
+    padding: 12px;
+}
+
+.icono-ticket {
+    width: 95px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 12px;
+}
+
+.icono-carrito {
+    width: 75px;
+    height: 85px;
+    border-radius: 50%;
+    padding: 12px;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1a1a2e; }
+::-webkit-scrollbar-thumb { background: #3a3a5e; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #4a4a7e; }

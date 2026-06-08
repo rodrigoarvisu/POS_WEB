@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/compras.css">
+</head>
+<body>
+
+
+<div class="cards-resumen">
+
+    <div class="card-resumen">
+        <div class="card-resumen-info">
+            <p class="card-resumen-label">Total comprado hoy</p>
+            <p class="card-resumen-valor" id="total-hoy">$0.00</p>
+            <p class="card-resumen-sub" id="compras-hoy">0 compras</p>
+        </div>
+        <div class="card-resumen-icono"> <img src="../img/iconocalendario.png" class="icono-cards"> </div>
+    </div>
+
+
+    <div class="card-resumen">
+        <div class="card-resumen-info">
+            <p class="card-resumen-label">Total comprado esta semana</p>
+            <p class="card-resumen-valor" id="total-semana">$0.00</p>
+            <p class="card-resumen-sub" id="compras-semana">0 compras</p>
+        </div>
+        <div class="card-resumen-icono"> <img src="../img/iconocalendario.png" class="icono-cards"> </div>
+    </div>
+
+
+    <div class="card-resumen">
+        <div class="card-resumen-info">
+            <p class="card-resumen-label">Total comprado este mes</p>
+            <p class="card-resumen-valor" id="total-mes">$0.00</p>
+            <p class="card-resumen-sub" id="compras-mes">0 compras</p>
+        </div>
+        <div class="card-resumen-icono"> <img src="../img/iconocalendario.png" class="icono-cards"> </div>
+    </div>
+
+
+    <div class="card-resumen">
+        <div class="card-resumen-info">
+            <p class="card-resumen-label">Total comprado este año</p>
+            <p class="card-resumen-valor" id="total-año">$0.00</p>
+            <p class="card-resumen-sub" id="compras-año">0 compras</p>
+        </div>
+        <div class="card-resumen-icono"> <img src="../img/iconocalendario.png" class="icono-cards"> </div>
+    </div>
+
+</div>
+
+
+
+<div class="contenido-principal">
+
+    <div class="panel-izquierdo">
+        <h2>Nueva compra</h2>
+
+        <div class="form-compra">
+            <div class="campo">
+                <label>Proveedor</label>
+                <input type="text" id="proveedor" placeholder="Nombre del proveedor">
+            </div>
+
+            <div class="campo">
+                <label>Fecha</label>
+                <input type="date" id="fecha-compra">
+            </div>
+
+            <div class="campo">
+                <label>Folio (opcional)</label>
+                <input type="text" id="folio" placeholder="COMP-00001">
+            </div>
+
+        </div>
+
+   
+        <div class="seccion-agregar">
+            <p class="seccion-label">Agregar productos</p>
+            <div class="buscador-compra">
+                <div class="buscador-wrapper">
+                    <span class="icono-buscar"></span>
+                    <input
+                        type="text"
+                        id="buscarProductos"
+                        placeholder="Buscar producto por nombre o código...">
+                    <div id="resultados" class="dropdown-resultados"></div>
+                </div>
+            </div>
+        </div>
+
+     
+        <div class="tabla-wrapper">
+            <table class="tabla-compra">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Producto</th>
+                        <th>Precio compra</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaCompras"></tbody>
+            </table>
+
+            <div class="tabla-vacia" id="tabla-vacia">
+                <p>No hay productos agregados</p>
+            </div>
+        </div>
+
+    
+        <div class="footer-compra">
+            <div class="totales">
+                <p>Total de productos: <span id="total-productos">0</span></p>
+                <p class="total-pagar">Total a pagar: <span id="totalCompra">$0.00</span></p>
+            </div>
+            <div class="botones-compra">
+                <button class="btn-limpiar" onclick="limpiarCompra()"> Limpiar</button>
+                <button class="btn-guardar" onclick="guardarCompra()"> Guardar compra</button>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <div class="panel-derecho">
+
+        <div class="historial-header">
+            <h2>Historial de compras</h2>
+            <button class="btn-ver-todas" onclick="cargarHistorial()">Ver todas</button>
+        </div>
+
+        <table class="tabla-historial">
+            <thead>
+                <tr>
+                    <th>Folio</th>
+                    <th>Fecha</th>
+                    <th>Proveedor</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tablaHistorial"></tbody>
+        </table>
+
+        
+        <div class="detalle-compra" id="detalle-compra" style="display:none;">
+            <div class="detalle-header">
+                <h3>Detalle de la compra seleccionada</h3>
+                <span class="folio-badge" id="detalle-folio"></span>
+            </div>
+            <div class="detalle-info" id="detalle-info"></div>
+            <table class="tabla-detalle">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio compra</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaDetalle"></tbody>
+            </table>
+            <div class="detalle-total" id="detalle-total"></div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../js/compras.js"></script>
+</body>
+</html>

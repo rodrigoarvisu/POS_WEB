@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="../css/estilos.css">
+    </head>
+    <body>
+         <div class="login-container">
+         <img src="../img/logo.puntoagil.png" class="logo">
+        <h1>¡Crea tu cuenta!</h1>
+
+        <p class="subtitulo">Registra un nuevo usuario para acceder al sistema.</p>
+
+
+        <form action="/registro" method="POST">
+            <input type="text" name="nombre" placeholder="Nombre"> <br> <br>
+             <input type="text" name="usuario" placeholder="Usuario"> <br> <br>
+              <input type="password" name="contrasena" placeholder="Contraseña"> <br> <br>
+               <input type="password" name="confirmar" placeholder="Repite tu contraseña"> <br> <br>
+             <button type="submit">Registrar cuenta</button> 
+
+             <p class="registro-link">
+                
+                <a href="index.html">Volver al inicio de sesión</a>
+             </p>
+        </form>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="../js/registro.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #dedede, #dededf);
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    color: black;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.logo {
+    width: 300px;
+}
+
+.subtitulo {
+    color: gray;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+input {
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 70%;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+
+    border-color: #1565c0;
+
+    box-shadow:
+    0px 0px 0px 4px rgba(21,101,192,0.10);
+}
+
+.login-container form button {
+    padding: 14px;
+    background-color: #1565c0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.login-container form button:hover {
+    background-color: #0d47a1;
+    transform: translateY(-2px);
+}
+
+.login-container {
+    background-color: white;
+    width: 500px;
+    padding: 40px;  
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.40);
+    text-align: center;
+}
+
+.registro-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: gray;
+}
+
+.registro-link a {
+    color: #1565c0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.registro-link a:hover {
+    text-decoration: underline;
+}
+

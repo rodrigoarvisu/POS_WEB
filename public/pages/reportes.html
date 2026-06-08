@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="../css/reportes.css">
+    </head>
+<body>
+    <div class="contenedor-reportes">
+       
+         <div class="filtros-reportes">
+            <button class="btn-filtro activo">
+                Hoy 
+            </button>
+
+            <button class="btn-filtro">
+              Esta semana 
+            </button>
+
+            <button class="btn-filtro">
+                Este mes
+            </button>
+
+            <button class="btn-filtro">
+                Este año
+            </button>
+         </div>
+
+         
+          <div class="cards-reportes">
+
+            <div class="card-reporte">
+                <div class="info-reporte">
+                <h3>Ventas</h3>
+                <p id="ventas">$0.00</p>
+                </div>
+                <img src="../img/icono_billetes.png" class="icono-ventas">
+            </div>
+
+
+            <div class="card-reporte">
+                <div class="info-reporte">
+                <h3>Compras</h3>
+                <p id="compras">$0.00</p>
+                </div>
+                <img src="../img/icono_carritorosa.png" class="icono-carrito">
+            </div>
+            
+ 
+             <div class="card-reporte">
+                <div class="info-reporte">
+                <h3>Utilidad</h3>
+                <p id="utilidad">$0.00</p>
+                </div>
+                <img src="../img/icono_utilidades.png" class="icono-utilidades">
+            </div>
+
+             <div class="card-reporte">
+                <div class="info-reporte">
+                <h3>Ticket promedio</h3>
+                <p id="ticket">$0.00</p>
+                </div>
+                <img src="../img/icono_ticket.png" class="icono-ticket">
+            </div>
+
+          </div> 
+          
+          <h3 id="titulo-grafica">Productos mas vendidos hoy...</h3>
+          <div class="grafica-reportes">
+             <canvas id="graficaVentas"></canvas>
+          </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="../js/reportes.js"></script>
+</body> 
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/productos.css">
+</head>
+<body>
+
+<div class="contenido">
+
+  
+    <div class="form-producto">
+        <h2>Registrar producto</h2>
+
+        <form id="form-producto">
+
+            <div class="grupo-input">
+                <label>Código</label>
+                <input type="text" id="codigo" placeholder="Ingresa el código" name="codigo" autofocus>
+            </div>
+
+            <div class="grupo-input">
+                <label>Nombre</label>
+                <input type="text" id="nombre" placeholder="Ingresa el nombre" name="nombre">
+            </div>
+
+            <div class="grupo-input">
+                <label>Precio venta</label>
+                <input type="number" id="precio_venta" step="0.01" placeholder="Precio de venta" name="precio_venta">
+            </div>
+
+            <div class="grupo-input">
+                <label>Precio compra</label>
+                <input type="number" id="precio_compra" step="0.01" placeholder="Precio de compra" name="precio_compra">
+            </div>
+
+            <div class="grupo-input">
+                <label>Stock</label>
+                <input type="number" id="stock" placeholder="Ingresa el stock" name="stock">
+            </div>
+
+            <button type="submit" id="btn-guardar">Guardar producto</button>
+
+        </form>
+    </div>
+
+    <!-- TABLA -->
+    <div class="tabla-productos">
+
+        <div class="encabezado-tabla">
+            <h2>Productos registrados</h2>
+            <input type="text" id="buscador-productos" placeholder="Buscar producto..." class="buscador-input">
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Precio venta</th>
+                    <th>Precio compra</th>
+                    <th>Stock</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-productos"></tbody>
+        </table>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../js/productos.js"></script>
+</body>
+</html>

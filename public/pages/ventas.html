@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/ventas.css">
+</head>
+<body class="body-ventas">
+
+<div class="contenido-principal">
+
+    
+    <div class="panel-izquierdo">
+
+        <div class="historial-header">
+            <h2>Nueva venta</h2>
+        </div>
+
+
+        <div class="buscador">
+            <div class="buscador-wrapper">
+                <span class="icono-buscar"></span>
+                <input
+                    type="text"
+                    id="buscador-productos"
+                    name="buscador-productos"
+                    autofocus
+                    placeholder="Buscar producto por código o nombre...">
+            </div>
+        </div>
+
+        
+        <div class="tabla-wrapper">
+            <table class="tabla-ventas">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-ventas"></tbody>
+            </table>
+        </div>
+
+        <div id="paginacion" class="paginacion"></div>
+
+        
+        <div class="seccion-carrito">
+            <h3 class="titulo-carrito">Venta actual</h3>
+
+            <div class="tabla-wrapper">
+                <table class="tabla-ventas">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th style="text-align:center">Cantidad</th>
+                            <th style="text-align:center">Total</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-carrito"></tbody>
+                </table>
+            </div>
+
+            <div class="tabla-vacia" id="tabla-vacia">
+                <p>No hay productos agregados</p>
+            </div>
+
+            
+            <div class="footer-venta">
+                <div class="total-venta">
+                    <p class="total-label">Total a pagar:</p>
+                    <p class="total-valor" id="total-venta">$0.00</p>
+                </div>
+                <div class="acciones-venta">
+                    <button id="btn-limpiar" class="btn-limpiar"> Limpiar</button>
+                    <button id="btn-cobrar" class="btn-cobrar"> Cobrar</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <div class="panel-derecho">
+
+        <div class="historial-header">
+            <h2>Historial de ventas</h2>
+            <button class="btn-ver-todas" onclick="cargarHistorial()">Actualizar</button>
+        </div>
+
+        <table class="tabla-historial">
+            <thead>
+                <tr>
+                    <th>Folio</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-historial"></tbody>
+        </table>
+
+        
+        <div class="detalle-venta" id="detalle-venta" style="display:none;">
+            <div class="detalle-header">
+                <h3>Detalle de la venta</h3>
+                <span class="folio-badge" id="detalle-folio"></span>
+            </div>
+
+            <div class="detalle-info" id="detalle-info"></div>
+
+            <table class="tabla-historial" style="margin-top:12px;">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-detalle"></tbody>
+            </table>
+
+            <div class="detalle-total" id="detalle-total"></div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../js/ventas.js"></script>
+
+</body>
+</html>

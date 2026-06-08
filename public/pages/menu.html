@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto Ágil POS</title>
+    <link rel="stylesheet" href="../css/menu.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="logo">
+            <img src="../img/logopuntoagilblanco.png" alt="PuntoÁgil POS">
+        </div>
+
+        <button id="toggleMenu" class="btn-ocultarmostrar">
+        ☰
+        </button>
+        <ul>
+            <li>
+                <a href="#" title="Inicio" class="activo" onclick="activar(this); cargarPagina('inicio.html'); cambiarTitulo('¡Bienvenido!', 'Administra tu negocio de forma rápida y sencilla.');">
+                    <img src="../img/icono_inicio.png" class="iconos-inicio"> 
+                    <span class="texto">Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="Ventas" onclick="activar(this); cargarPagina('ventas.html'); cambiarTitulo('Ventas', 'Gestiona y registra tus ventas.');">
+                    <img src="../img/icono_ventas.png" class="iconos-ventas">
+                    <span class="texto">Ventas</span>
+                </a>
+            </li>
+             <li>
+                <a href="#" title="Compras" onclick="activar(this); cargarPagina('compras.html'); cambiarTitulo('Compras', 'Gestiona y registra tus compras.');">
+                    <img src="../img/icono_compras.png" class="iconos-ventas"> 
+                    <span class="texto">Compras</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="Productos" onclick="activar(this); cargarPagina('productos.html'); cambiarTitulo('Productos', 'Administra tus productos.');">
+                    <img src="../img/icono_productos.png" class="iconos-productos"> 
+                    <span class="texto">Productos</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="Reportes" onclick="activar(this); cargarPagina('reportes.html'); cambiarTitulo('Reportes', 'Consulta y administra tus finanzas.');">
+                    <img src="../img/icono_reportes.png" class="iconos-reporte">
+                    <span class="texto">Reportes</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="Configuración" onclick="activar(this); cargarPagina('config.html'); cambiarTitulo('Configuración', 'Ajusta los parametros y preferencias de tu sistema.');">
+                    <img src="../img/icono_config.png" class="iconos-config"> 
+                    <span class="texto">Configuración</span>
+                </a>
+            </li>
+             
+        </ul>
+
+        <div class="sidebar-footer">
+            <a href="javascript:void(0)" title="Cerrar sesión" onclick="cerrarSesion()">
+                <img src="../img/iconocerrar.png" class="iconos-cs"> 
+                <span class="texto">Cerrar sesión</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="main-content">
+
+        <div class="topbar">
+            <div class="topbar-left">
+                <h2 id="titulo-pagina">¡Bienvenido!</h2>
+                <p id="subtitulo-pagina">Administra tu negocio de forma rápida y sencilla.</p>
+            </div>
+
+            <div class="topbar-right">
+                <div class="topbar-item">
+                    <img src="../img/iconoreloj.png" class="icono-topbar">
+                    <span id="hora"></span>
+                </div>
+                <div class="topbar-item">
+                    <img src="../img/iconocalendario.png" class="icono-topbar">
+                    <span id="fecha"></span>
+                </div>
+                <div class="topbar-item">
+                    <img src="../img/iconousuario.png" class="icono-topbar">
+                    <span id="usuario-actual"></span>
+                </div>
+            </div>
+        </div>
+
+        <iframe id="frame-contenido" class="frame-contenido" src="inicio.html"></iframe>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/menu.js"></script>
+</body>
+</html>

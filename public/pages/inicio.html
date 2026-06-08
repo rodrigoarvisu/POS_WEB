@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="../css/inicio.css">
+</head>
+<body>
+
+<div class="contenido">
+    <div class="dashboard-grid">
+
+        
+        <div class="left-panel">
+
+            
+            <div class="card-ventas">
+                <div class="info-card">
+                    <h3>Ventas del día</h3>
+                    <p id="ventas-hoy">$0.00</p>
+                    <p2>Total vendido hoy</p2>
+                </div>
+                <div id="indicador-ventas" class="indicador"></div>
+            </div>
+
+         
+            <div class="card-ventas">
+                <div class="info-card">
+                    <h3>Utilidad del día</h3>
+                    <p id="utilidad-inicio">$0.00</p>
+                    <p2>Ganancias totales hoy</p2>
+                </div>
+                
+            </div>
+
+           
+            <div class="top-dashboard">
+                <div class="encabezado-inicio">
+                    <h2>Accesos rápidos</h2>
+                </div>
+
+                <div class="accesos-rapidos">
+
+                    <button class="btn-acceso" onclick="
+                        parent.navegarDesdeInicio('productos.html', 'Productos', 'Administra tus productos.')
+                    ">
+                        <img src="../img/productonuevo.png" class="iconos-accesos"> 
+                        <p>Nuevo producto</p>
+                    </button>
+
+                    <button class="btn-acceso" onclick="
+                        parent.navegarDesdeInicio('ventas.html', 'Ventas', 'Gestiona y registra tus ventas.')
+                    ">
+                        <img src="../img/ventanueva.png" class="iconos-accesos">
+                        <p>Nueva venta</p>
+                    </button>
+
+                    <button class="btn-acceso" onclick="
+                        parent.navegarDesdeInicio('reportes.html', 'Reportes', 'Consulta tus reportes.')
+                    ">
+                        <img src="../img/verreportes.png" class="iconos-accesos">
+                        <p>Ver reportes</p>
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+
+        
+        <div class="right-panel">
+
+           
+            <div class="grafica-card">
+                <h2>Ventas de la semana</h2>
+                <canvas id="graficaVentas"></canvas>
+            </div>
+
+           
+            <div class="bottom-dashboard">
+                <div class="cards-productos">
+
+                    <div class="card" onclick="parent.navegarDesdeInicio(
+                        'productos.html', 'Productos', 'Administra tus productos.'
+                        )" 
+                    style="cursor:pointer">
+                        <div class="icono-card">
+                            <img src="../img/iconoproductoscards.png" class="iconos">
+                        </div>
+                        <div class="info-card">
+                            <h3>Productos registrados</h3>
+                            <p id="total-productos">0 productos</p>
+                            <p2>Total de productos registrados.</p2>
+                        </div>
+                    </div>
+
+                    <div class="card-advertencia" onclick="abrirModal(
+                        'Bajo inventario', productosBajoStock
+                        )" 
+                    style="cursor:pointer">
+                        <div class="icono-card">
+                            <img src="../img/iconoadvertenciacards.png" class="iconos-advertencia">
+                        </div>
+                        <div class="info-card">
+                            <h3>Bajo inventario</h3>
+                            <p id="bajo-stock">0 productos</p>
+                            <p2>Productos con bajo stock.</p2>
+                        </div>
+                    </div>
+
+                    <div class="card-error" onclick="abrirModal(
+                        'Sin stock', productosSinStock
+                        )"
+                     style="cursor:pointer">
+                        <div class="icono-card">
+                            <img src="../img/iconotachecards.png" class="iconos-advertencia">
+                        </div>
+                        <div class="info-card">
+                            <h3>Sin stock</h3>
+                            <p id="sin-stock">0 productos</p>
+                            <p2>Productos sin stock.</p2>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal-overlay" id="modal-stock">
+    <div class="modal">
+
+        <div class="modal-header">
+            <h3 id="modal-titulo">Título</h3>
+            <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
+        </div>
+
+        <div class="modal-contenido">
+            <table class="modal-tabla">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Stock</th>
+                    </tr>
+                </thead>
+                <tbody id="modal-tbody"></tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../js/inicio.js"></script>
+</body>
+</html>
