@@ -7,36 +7,131 @@
 
 <body>
     <div class="config-contenedor">
+
         <div class="config-sidebar">
 
-            <button class="config-item activo">
+            <button class="config-item activo" onclick="mostrarSeccion('datos', this)">
                 Datos del negocio
             </button>
 
-            <button class="config-item">
-                Seguridad
+            <button class="config-item" onclick="mostrarSeccion('seguridad', this)">
+                Cambiar contraseña
             </button>
 
-            <button class="config-item">
-                Inventario 
+            <button class="config-item" onclick="mostrarSeccion('inventario', this)">
+                Inventario
             </button>
 
-            <button class="config-item">
-                Ventas 
+            <button class="config-item" onclick="mostrarSeccion('apariencia', this)">
+                Apariencia
             </button>
 
-            <button class="config-item">
-                Acerca de 
+            <button class="config-item" onclick="mostrarSeccion('acerca', this)">
+                Acerca de
             </button>
+
         </div>
 
         <div class="config-content">
-            <div id="datos-negocio">
-                Contenido
+
+            <!-- DATOS DEL NEGOCIO -->
+            <div id="datos" class="seccion activa">
+                <h2>Datos del negocio</h2>
+
+                <div class="grid-form">
+                    <div class="grupo-campo">
+                        <label>Nombre del negocio</label>
+                        <input type="text" placeholder="Ingresa el nombre">
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label>RFC (opcional)</label>
+                        <input type="text" placeholder="Ingresa el RFC">
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label>Dirección</label>
+                        <input type="text" placeholder="Ingresa la dirección">
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label>Teléfono</label>
+                        <input type="text" placeholder="Ingresa el teléfono">
+                    </div>
+                </div>
+
+                <button class="btn-guardar">Guardar cambios</button>
             </div>
+
+            <!-- CAMBIAR CONTRASEÑA -->
+            <div id="seguridad" class="seccion">
+                <h2>Cambiar contraseña</h2>
+
+                <div class="grupo-campo">
+                    <label>Contraseña actual</label>
+                    <input type="password" placeholder="Ingresa tu contraseña actual">
+                </div>
+
+                <div class="grupo-campo">
+                    <label>Nueva contraseña</label>
+                    <input type="password" placeholder="Ingresa tu contraseña nueva">
+                </div>
+
+                <div class="grupo-campo">
+                    <label>Confirmar contraseña</label>
+                    <input type="password" placeholder="Confirma tu contraseña">
+                </div>
+
+                <button class="btn-guardar">Actualizar contraseña</button>
+            </div>
+
+            <!-- INVENTARIO -->
+            <div id="inventario" class="seccion">
+                <h2>Alertas de inventario</h2>
+
+                <p class="inventario-desc">
+                    Define a partir de qué cantidad de stock un producto se mostrará
+                    como "bajo inventario" en el dashboard.
+                </p>
+
+                <div class="grupo-campo">
+                    <label>Stock mínimo</label>
+                    <input type="number" class="input-stock" placeholder="Ej. 4">
+                </div>
+
+                <button class="btn-guardar">Guardar cambios</button>
+            </div>
+
+            <!-- APARIENCIA -->
+            <div id="apariencia" class="seccion">
+                <h2>Apariencia</h2>
+
+                <p class="inventario-desc">
+                    Selecciona el tema visual del sistema.
+                </p>
+
+                <div class="apariencia-opciones">
+                    <div class="opcion-tema">
+                        <div class="preview-tema oscuro"></div>
+                        <span>Oscuro (actual)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACERCA DE -->
+            <div id="acerca" class="seccion">
+                <h2>Acerca de</h2>
+
+                <p class="inventario-desc">
+                    PuntoÁgil POS — Sistema de punto de venta.<br>
+                    Versión 1.0
+                </p>
+            </div>
+
         </div>
 
     </div>
-</body>
 
+    <script src="../js/config.js"></script>
+</body>
 </html>
