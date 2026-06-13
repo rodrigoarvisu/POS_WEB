@@ -51,7 +51,7 @@ app.post('/login', async (req, res) => {
                 if(coincide){
                     res.redirect(`/pages/menu.html?login=1&usuario=${usuario}`);
                 }else{
-                res.redirect("/index.html?error=1");
+                res.redirect("/pages/index.html?error=1");
                 }
          }else{
             res.redirect("/pages/index.html?error=1");
@@ -729,6 +729,47 @@ app.get('/detalle-venta/:id', (req, res) => {
 });
 
 
+app.put('/cambiar-contrasena', async(req, res) => {
+    const {usuario, contrasenaActual, nuevaContrasena, confirmacion} = req.body;
+    if (nuevaContrasena !== confirmacion) {
+        return res.status(400).json({
+            mensaje: 'Las contraseñas no coinciden'
+        });
+        }
+
+    const sql = 'SELECT * FROM usuarios WHERE usuario = ?';
+
+    conexion.query(sql, [usuario], async (error, resultados) => {
+         if (error || resultados.length === 0) {
+            return res.status(404).json({
+                mensaje: 'Usuario no encontrado'
+            });
+        }
+
+        const usuarioBD = resultados[0];
+        const coincide = await bcrypt.compare(contrasenaActual, usuarioBD.contrasena);
+
+        if (!coincide) {
+            return res.status(401).json({
+                mensaje: 'La contraseña actual es incorrecta'
+            });
+        }
+
+        const nuevaHash = await bcrypt.hash(nuevaContrasena, 10);
+
+        conexion.query(
+            'UPDATE usuarios SET contrasena = ? WHERE usuario = ?', 
+            [nuevaHash, usuario], (error2) => {
+                if (error2) return res.status(500).json({
+                    mensaje: 'Error al actualizar la contraseña'
+                });
+
+                res.status(200).json({
+                    mensaje: 'Contraseña actualizada correctamente'
+                });
+        });
+    });
+});
 
 app.listen(3000, '0.0.0.0', () => {
     console.log("Servidor corriendo en puerto 3000");
